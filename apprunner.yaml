@@ -1,0 +1,23 @@
+version: 1.0
+runtime: nodejs16
+build:
+  commands:
+    pre-build:
+      - npm install
+      - npm run build
+    build:
+      - npm version
+  env:
+    - name: NEXT_PUBLIC_SUPABASE_URL
+      value: https://d3sfbp327n4k7d.cloudfront.net
+    - name: NEXT_PUBLIC_SUPABASE_ANON_KEY
+      value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTY2ODE2MjA5MywiZXhwIjoxOTgzNzM4MDkzLCJpc3MiOiJzdXBhYmFzZSJ9.L7Sxtmk0bzkSk5b5ZstSnvobMnwZh2MGIFSlQlkIRYQ
+run:
+  command: npm run start
+  network:
+    port: 3000
+  env:
+    - name: NEXT_PUBLIC_SUPABASE_URL
+      value: https://d3sfbp327n4k7d.cloudfront.net
+    - name: NEXT_PUBLIC_SUPABASE_ANON_KEY
+      value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTY2ODE2MjA5MywiZXhwIjoxOTgzNzM4MDkzLCJpc3MiOiJzdXBhYmFzZSJ9.L7Sxtmk0bzkSk5b5ZstSnvobMnwZh2MGIFSlQlkIRYQ
